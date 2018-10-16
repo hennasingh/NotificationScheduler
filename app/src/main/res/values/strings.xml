@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">NotificationScheduler</string>
+    <string name="network_type_required">Network Type Required:</string>
+    <string name="none">None</string>
+    <string name="any">Any</string>
+    <string name="wifi">Wifi</string>
+    <string name="schedule_job">Schedule Job</string>
+    <string name="cancel_job">Cancel Job</string>
 </resources>
