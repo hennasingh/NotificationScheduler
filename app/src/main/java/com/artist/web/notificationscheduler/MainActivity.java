@@ -46,11 +46,21 @@ public class MainActivity extends AppCompatActivity {
                 NotificationJobService.class.getName());
         JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, serviceName);
         builder.setRequiredNetworkType(selectedNetworkOption);
-        JobInfo jobInfo = builder.build();
-        mJobScheduler.schedule(jobInfo);
 
-        Toast.makeText(this, "Job Scheduled, job will run when " +
-                "the constraints are met.", Toast.LENGTH_SHORT).show();
+        boolean constraintSet = selectedNetworkOption != JobInfo.NETWORK_TYPE_NONE;
+
+        if(constraintSet) {
+
+            //Schedule the job and notify the user
+            JobInfo jobInfo = builder.build();
+            mJobScheduler.schedule(jobInfo);
+
+            Toast.makeText(this, "Job Scheduled, job will run when " +
+                    "the constraints are met.", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(this, "Please set at least one constraint",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void cancelJob(View view){
