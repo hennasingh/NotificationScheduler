@@ -6,4 +6,7 @@
     <string name="wifi">Wifi</string>
     <string name="schedule_job">Schedule Job</string>
     <string name="cancel_job">Cancel Job</string>
+    <string name="requires">Requires:</string>
+    <string name="device_idle">Device Idle</string>
+    <string name="device_charging">Device Charging</string>
 </resources>
